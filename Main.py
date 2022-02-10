@@ -3,7 +3,7 @@ from UC3MCare import VaccineRequest
 import string
 
 #GLOBAL VARIABLES
-letters = string.ascii_letters + string.punctuation + string.digits
+LETTERS = string.ascii_letters + string.punctuation + string.digits
 shift = 3
 
 
@@ -13,8 +13,8 @@ def Encode(word):
         if letter == ' ':
             encoded = encoded + ' '
         else:
-            x = (letters.index(letter) + shift) % len(letters)
-            encoded = encoded + letters[x]
+            x = (LETTERS.index(letter) + shift) % len(LETTERS)
+            encoded = encoded + LETTERS[x]
     return encoded
 
 def Decode(word):
@@ -23,8 +23,8 @@ def Decode(word):
         if letter == ' ':
             encoded = encoded + ' '
         else:
-            x = (letters.index(letter) - shift) % len(letters)
-            encoded = encoded + letters[x]
+            x = (LETTERS.index(letter) - shift) % len(LETTERS)
+            encoded = encoded + LETTERS[x]
     return encoded
 
 def main():
