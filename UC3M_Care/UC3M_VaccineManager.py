@@ -3,10 +3,10 @@ import json
 import uuid
 import re
 
-from .UC3M_VaccineManagementException import UC3M_VaccineManagementException
-from .UC3M_VaccineRequest import UC3M_VaccineRequest
+from .UC3M_VaccineManagementException import VACCINEMANAGEMENTEXCEPTION
+from .UC3M_VaccineRequest import VACCINEREQUEST
 
-class VACCINE_MANAGER:
+class VACCINEMANAGER:
     """THIS IS THE CLASS WHERE WE CHECK BOTH FOR THE GUID AND FOR THE ACCESS REQUEST IN THE JSON FILE"""
     def __init__(self):
         pass
@@ -22,9 +22,9 @@ class VACCINE_MANAGER:
                                  , re.IGNORECASE)
             x_var = myregex.fullmatch(guid)
             if not x_var:
-                raise UC3M_VaccineManagementException("Invalid UUID v4 format")
+                raise VACCINEMANAGEMENTEXCEPTION("Invalid UUID v4 format")
         except ValueError as e_var:
-            raise UC3M_VaccineManagementException("Id receive is not a UUID") from e_var
+            raise VACCINEMANAGEMENTEXCEPTION("Id receive is not a UUID") from e_var
         return True
 
     def readAccessRequestFromJson(self, fileContent):
@@ -34,19 +34,19 @@ class VACCINE_MANAGER:
             with open(fileContent, encoding="utf-8") as file_cont:
                 data_cont = json.load(file_cont)
         except FileNotFoundError as e_var:
-            raise UC3M_VaccineManagementException("Wrong file or file path") from e_var
+            raise VACCINEMANAGEMENTEXCEPTION("Wrong file or file path") from e_var
         except json.JSONDecodeError as e_var:
-            raise UC3M_VaccineManagementException("JSON Decode Error - Wrong JSON Format") from e_var
+            raise VACCINEMANAGEMENTEXCEPTION("JSON Decode Error - Wrong JSON Format") from e_var
 
 
         try:
             guid_profile = data_cont["id"]
             zip_cont = data_cont["phoneNumber"]
-            req = UC3M_VaccineRequest(guid_profile, zip_cont)
+            req = VACCINEREQUEST(guid_profile, zip_cont)
         except KeyError as e_var:
-            raise UC3M_VaccineManagementException("JSON Decode Error - Invalid JSON Key") from e_var
+            raise VACCINEMANAGEMENTEXCEPTION("JSON Decode Error - Invalid JSON Key") from e_var
         if not self.validateGuid(guid_profile):
-            raise UC3M_VaccineManagementException("Invalid GUID")
+            raise VACCINEMANAGEMENTEXCEPTION("Invalid GUID")
 
         # Close the file
         return req
