@@ -29,7 +29,7 @@ def Decode(word):
 
 def main():
     mng = VACCINE_MANAGER()
-    res = mng.ReadaccessrequestfromJSON("test.json")
+    res = mng.readAccessRequestFromJson("test.json")
     strRes = res.__str__()
     print(strRes)
     EncodeRes = Encode(strRes)
