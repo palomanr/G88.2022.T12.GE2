@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 import pandas
 
-class VaccineRequest:
+class VACCINE_REQUEST:
     def __init__( self, idcode, phoneNumber ):
         self.__phoneNumber = phoneNumber
         self.__idcode = idcode

@@ -1,5 +1,5 @@
-from UC3MCare import VaccineManager
-from UC3MCare import VaccineRequest
+from UC3M_Care import VACCINE_MANAGER
+from UC3M_Care import VACCINE_REQUEST
 import string
 
 #GLOBAL VARIABLES
@@ -28,7 +28,7 @@ def Decode(word):
     return encoded
 
 def main():
-    mng = VaccineManager()
+    mng = VACCINE_MANAGER()
     res = mng.ReadaccessrequestfromJSON("test.json")
     strRes = res.__str__()
     print(strRes)

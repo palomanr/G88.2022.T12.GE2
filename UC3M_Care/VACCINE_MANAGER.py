@@ -1,10 +1,10 @@
 import json
 import uuid
 
-from .VaccineMangementException import VaccineManagementException
-from .VaccineRequest import VaccineRequest
+from .VACCINE_MANAGEMENT_EXCEPTION import VACCINE_MANAGEMENT_EXCEPTION
+from .VACCINE_REQUEST import VACCINE_REQUEST
 
-class VaccineManager:
+class VACCINE_MANAGER:
     def __init__(self):
         pass
 
@@ -20,9 +20,9 @@ class VaccineManager:
                                  , re.IGNORECASE)
             x = myregex.fullmatch(GUID)
             if not x:
-                raise VaccineManagementException("Invalid UUID v4 format")
+                raise VACCINE_MANAGEMENT_EXCEPTION("Invalid UUID v4 format")
         except ValueError as e:
-            raise VaccineManagementException("Id receive is not a UUID") from e
+            raise VACCINE_MANAGEMENT_EXCEPTION("Id receive is not a UUID") from e
         return True
 
     def ReadaccessrequestfromJSON(self, fi):
@@ -31,19 +31,19 @@ class VaccineManager:
             with open(fi) as f:
                 DATA = json.load(f)
         except FileNotFoundError as e:
-            raise VaccineManagementException("Wrong file or file path") from e
+            raise VACCINE_MANAGEMENT_EXCEPTION("Wrong file or file path") from e
         except json.JSONDecodeError as e:
-            raise VaccineManagementException("JSON Decode Error - Wrong JSON Format") from e
+            raise VACCINE_MANAGEMENT_EXCEPTION("JSON Decode Error - Wrong JSON Format") from e
 
 
         try:
             Guid = DATA["id"]
             Zip = DATA["phoneNumber"]
-            req = VaccineRequest(Guid, Zip)
+            req = VACCINE_REQUEST(Guid, Zip)
         except KeyError as e:
-            raise VaccineManagementException("JSON Decode Error - Invalid JSON Key") from e
+            raise VACCINE_MANAGEMENT_EXCEPTION("JSON Decode Error - Invalid JSON Key") from e
         if not self.ValidateGUID(Guid):
-            raise VaccineManagementException("Invalid GUID")
+            raise VACCINE_MANAGEMENT_EXCEPTION("Invalid GUID")
 
         # Close the file
         return req
