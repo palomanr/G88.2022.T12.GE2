@@ -174,14 +174,14 @@ class-const-naming-style=UPPER_CASE
 #class-const-rgx=
 
 # Naming style matching correct class names.
-class-naming-style=PascalCase
+class-naming-style=UPPER_CASE #modified
 
 # Regular expression matching correct class names. Overrides class-naming-
 # style.
 #class-rgx=
 
 # Naming style matching correct constant names.
-const-naming-style=UPPER_CASE
+const-naming-style=PascalCase #modified
 
 # Regular expression matching correct constant names. Overrides const-naming-
 # style.
@@ -192,7 +192,7 @@ const-naming-style=UPPER_CASE
 docstring-min-length=-1
 
 # Naming style matching correct function names.
-function-naming-style=snake_case
+function-naming-style=camelCase #modified
 
 # Regular expression matching correct function names. Overrides function-
 # naming-style.
@@ -221,14 +221,14 @@ inlinevar-naming-style=any
 #inlinevar-rgx=
 
 # Naming style matching correct method names.
-method-naming-style=snake_case
+method-naming-style=camelCase #modified
 
 # Regular expression matching correct method names. Overrides method-naming-
 # style.
 #method-rgx=
 
 # Naming style matching correct module names.
-#module-naming-style=PascalCase
+#module-naming-style=PascalCase #modified
 
 # Regular expression matching correct module names. Overrides module-naming-
 # style.
@@ -248,7 +248,7 @@ no-docstring-rgx=^_
 property-classes=abc.abstractproperty
 
 # Naming style matching correct variable names.
-variable-naming-style=snake_case
+variable-naming-style=snake_case #modified
 
 # Regular expression matching correct variable names. Overrides variable-
 # naming-style.
@@ -271,10 +271,10 @@ indent-after-paren=4
 indent-string='    '
 
 # Maximum number of characters on a single line.
-max-line-length=100
+max-line-length=120 #modified
 
 # Maximum number of lines in a module.
-max-module-lines=1000
+max-module-lines=1500 #modified
 
 # Allow the body of a class to be on the same line as the declaration if body
 # contains single statement.
@@ -426,7 +426,7 @@ signature-mutators=
 additional-builtins=
 
 # Tells whether unused global variables should be treated as a violation.
-allow-global-unused-variables=yes
+allow-global-unused-variables=no #modified
 
 # List of names allowed to shadow builtins
 allowed-redefined-builtins=
@@ -445,7 +445,7 @@ dummy-variables-rgx=_+$|(_[a-zA-Z0-9_]*[a-zA-Z0-9]+?$)|dummy|^ignored_|^unused_
 ignored-argument-names=_.*|^ignored_|^unused_
 
 # Tells whether we should check for unused import in __init__ files.
-init-import=no
+init-import=yes #modified
 
 # List of qualified module names which can have objects that can redefine
 # builtins.
@@ -489,10 +489,10 @@ exclude-too-few-public-methods=
 ignored-parents=
 
 # Maximum number of arguments for function / method.
-max-args=5
+max-args=7 #modified
 
 # Maximum number of attributes for a class (see R0902).
-max-attributes=7
+max-attributes=10 #modified
 
 # Maximum number of boolean expressions in an if statement (see R0916).
 max-bool-expr=5
@@ -516,7 +516,7 @@ max-returns=6
 max-statements=50
 
 # Minimum number of public methods for a class (see R0903).
-min-public-methods=2
+min-public-methods=1 #modified
 
 
 [IMPORTS]
