@@ -1,8 +1,8 @@
 import json
 from datetime import datetime
-import pandas
 
-class VACCINE_REQUEST:
+
+class UC3M_VaccineRequest:
     def __init__( self, idcode, phoneNumber ):
         self.__phoneNumber = phoneNumber
         self.__idcode = idcode

@@ -1,4 +1,4 @@
-class VACCINE_MANAGEMENT_EXCEPTION(Exception):
+class UC3M_VaccineManagementException(Exception):
     def __init__(self, message):
         self.__message = message
         super().__init__(self.message)
