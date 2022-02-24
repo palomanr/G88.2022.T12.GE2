@@ -2,7 +2,7 @@ import json
 import uuid
 
 from .VACCINE_MANAGEMENT_EXCEPTION import VACCINE_MANAGEMENT_EXCEPTION
-from .VACCINE_REQUEST import VACCINE_REQUEST
+from .UC3M_VACCINEREQUEST import VACCINEREQUEST
 
 class VACCINE_MANAGER:
     def __init__(self):
@@ -39,7 +39,7 @@ class VACCINE_MANAGER:
         try:
             Guid = DATA["id"]
             Zip = DATA["phoneNumber"]
-            req = VACCINE_REQUEST(Guid, Zip)
+            req = VACCINEREQUEST(Guid, Zip)
         except KeyError as e:
             raise VACCINE_MANAGEMENT_EXCEPTION("JSON Decode Error - Invalid JSON Key") from e
         if not self.ValidateGUID(Guid):

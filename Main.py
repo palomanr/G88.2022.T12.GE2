@@ -1,5 +1,5 @@
 from UC3M_Care import VACCINE_MANAGER
-from UC3M_Care import VACCINE_REQUEST
+from UC3M_Care import VACCINEREQUEST
 import string
 
 #GLOBAL VARIABLES
