@@ -50,3 +50,4 @@ class VACCINEMANAGER:
 
         # Close the file
         return req
+VACCINEMANAGER()

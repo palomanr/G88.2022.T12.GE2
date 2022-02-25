@@ -29,3 +29,4 @@ class VACCINEREQUEST:
     @idDocument.setter
     def idDocument(self,value):
         self.idCode = value
+VACCINEREQUEST(5, 689433269)

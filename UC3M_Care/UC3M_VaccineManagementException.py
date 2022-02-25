@@ -14,3 +14,4 @@ class VACCINEMANAGEMENTEXCEPTION(Exception):
     @message.setter
     def message(self,value):
         self.messageContent = value
+VACCINEMANAGEMENTEXCEPTION("message")
