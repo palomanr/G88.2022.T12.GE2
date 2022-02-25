@@ -232,7 +232,7 @@ method-naming-style=camelCase #modified
 
 # Regular expression matching correct module names. Overrides module-naming-
 # style.
-module-rgx=UC3M_[A-Z][a-zA-Z]{3,20}$ #modified
+module-rgx=UC3M_[A-Z][a-zA-Z]{3,40}$ #modified
 
 # Colon-delimited sets of names that determine each other's naming style when
 # the name regexes allow several styles.
